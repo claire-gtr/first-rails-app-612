@@ -1,0 +1,26 @@
+<h1>Home page</h1>
+
+<p>Today is <%= Date.today %> </p>
+
+
+<%# members = [ 'thanh', 'dimitri', 'germain', 'damien', 'julien' ] %>
+
+<form action="/" method="get">
+  <input type="text" name="teacher" value= "<%= params[:teacher] %>" placeholder="Who are you looking for?">
+  <input type="submit">
+</form>
+
+<h2>Meet our team</h2>
+<ol>
+  <% @members.each do |member| %>
+    <li><%= member.capitalize %></li>
+  <% end %>
+</ol>
+
+<%= link_to "Go to contact page", contact_path %>
+<%= link_to "Go to about page", about_path  %>
+
+<%#= link_to contact_path do  %>
+  <!-- <img src="" alt=""> -->
+<%# end %>
+
